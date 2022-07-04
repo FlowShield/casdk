@@ -13,9 +13,9 @@ import (
 	"sync"
 
 	"github.com/cloudslit/casdk/pkg/logger"
+	"github.com/cloudslit/cfssl/csr"
+	"github.com/cloudslit/cfssl/helpers"
 	"github.com/pkg/errors"
-	"github.com/ztalab/cfssl/csr"
-	"github.com/ztalab/cfssl/helpers"
 
 	"github.com/cloudslit/casdk/keygen"
 	"github.com/cloudslit/casdk/pkg/spiffe"

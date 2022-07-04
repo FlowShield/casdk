@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	cf_csr "github.com/ztalab/cfssl/csr"
-	"github.com/ztalab/cfssl/helpers"
+	cf_csr "github.com/cloudslit/cfssl/csr"
+	"github.com/cloudslit/cfssl/helpers"
 
 	"github.com/cloudslit/casdk/pkg/pkiutil"
 	"github.com/cloudslit/casdk/pkg/spiffe"

@@ -7,16 +7,16 @@ import (
 	"encoding/hex"
 	"net/http"
 
-	"github.com/ztalab/cfssl/hook"
+	"github.com/cloudslit/cfssl/hook"
 
-	"github.com/ztalab/cfssl/helpers"
-	"github.com/ztalab/cfssl/info"
+	"github.com/cloudslit/cfssl/helpers"
+	"github.com/cloudslit/cfssl/info"
 
 	jsoniter "encoding/json"
+	"github.com/cloudslit/cfssl/api/client"
+	"github.com/cloudslit/cfssl/auth"
+	"github.com/cloudslit/cfssl/signer"
 	"github.com/pkg/errors"
-	"github.com/ztalab/cfssl/api/client"
-	"github.com/ztalab/cfssl/auth"
-	"github.com/ztalab/cfssl/signer"
 	"go.uber.org/zap"
 )
 

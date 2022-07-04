@@ -3,7 +3,7 @@ package caclient
 import (
 	"time"
 
-	"github.com/ztalab/cfssl/transport/roots"
+	"github.com/cloudslit/cfssl/transport/roots"
 	"go.uber.org/zap"
 )
 

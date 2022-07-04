@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/cloudslit/casdk/keygen"
-	"github.com/ztalab/cfssl/csr"
-	"github.com/ztalab/cfssl/transport/core"
+	"github.com/cloudslit/cfssl/csr"
+	"github.com/cloudslit/cfssl/transport/core"
 	"go.uber.org/zap"
 )
 

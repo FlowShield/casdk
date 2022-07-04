@@ -8,7 +8,7 @@ import (
 
 	"github.com/cloudslit/casdk/pkg/logger"
 	"github.com/cloudslit/casdk/pkg/spiffe"
-	"github.com/ztalab/cfssl/transport/core"
+	"github.com/cloudslit/cfssl/transport/core"
 )
 
 // TLSGenerator ...

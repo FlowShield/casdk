@@ -4,6 +4,7 @@ go 1.16
 
 require (
 	github.com/cloudflare/backoff v0.0.0-20161212185259-647f3cdfc87a
+	github.com/cloudslit/cfssl v0.0.1
 	github.com/google/certificate-transparency-go v1.1.2-0.20210728111105-5f7e9ba4be3d // indirect
 	github.com/jmoiron/sqlx v1.2.1-0.20190826204134-d7d95172beb5 // indirect
 	github.com/klauspost/compress v1.10.10 // indirect
@@ -16,7 +17,6 @@ require (
 	github.com/spiffe/go-spiffe/v2 v2.0.0-beta.4
 	github.com/urfave/cli v1.22.5 // indirect
 	github.com/valyala/fasthttp v1.15.1
-	github.com/ztalab/cfssl v0.0.2
 	go.uber.org/zap v1.17.0
 	golang.org/x/crypto v0.0.0-20201117144127-c1f2f97bffc9
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c

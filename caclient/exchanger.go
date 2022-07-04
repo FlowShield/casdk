@@ -1,13 +1,13 @@
 package caclient
 
 import (
+	"github.com/cloudflare/backoff"
 	"github.com/cloudslit/casdk/keyprovider"
 	"github.com/cloudslit/casdk/pkg/spiffe"
-	"github.com/cloudflare/backoff"
+	"github.com/cloudslit/cfssl/hook"
+	"github.com/cloudslit/cfssl/transport"
+	"github.com/cloudslit/cfssl/transport/roots"
 	"github.com/pkg/errors"
-	"github.com/ztalab/cfssl/hook"
-	"github.com/ztalab/cfssl/transport"
-	"github.com/ztalab/cfssl/transport/roots"
 	"go.uber.org/zap"
 	"net/url"
 	"reflect"

@@ -158,6 +158,8 @@ github.com/cloudflare/backoff v0.0.0-20161212185259-647f3cdfc87a h1:8d1CEOF1xlde
 github.com/cloudflare/backoff v0.0.0-20161212185259-647f3cdfc87a/go.mod h1:rzgs2ZOiguV6/NpiDgADjRLPNyZlApIWxKpkT+X8SdY=
 github.com/cloudflare/go-metrics v0.0.0-20151117154305-6a9aea36fb41/go.mod h1:eaZPlJWD+G9wseg1BuRXlHnjntPMrywMsyxf+LTOdP4=
 github.com/cloudflare/redoctober v0.0.0-20171127175943-746a508df14c/go.mod h1:6Se34jNoqrd8bTxrmJB2Bg2aoZ2CdSXonils9NsiNgo=
+github.com/cloudslit/cfssl v0.0.1 h1:vGLq8xAyO/xtDRgVs5Eo0ANxfEs9/05HOC8FvOuu88M=
+github.com/cloudslit/cfssl v0.0.1/go.mod h1:yLy1Ao1m97Na/phPjfO/pm+pmQQK941JshmDYL6DsW4=
 github.com/cncf/udpa/go v0.0.0-20191209042840-269d4d468f6f/go.mod h1:M8M6+tZqaGXZJjfX53e64911xZQV5JYwmTeXPW+k8Sc=
 github.com/cncf/udpa/go v0.0.0-20200629203442-efcf912fb354/go.mod h1:WmhPx2Nbnhtbo57+VJT5O0JRkEi1Wbu0z5j0R8u5Hbk=
 github.com/cncf/udpa/go v0.0.0-20201120205902-5459f2c99403 h1:cqQfy1jclcSy/FwLjemeg3SR1yaINm74aQyupQ0Bl8M=
@@ -780,8 +782,6 @@ github.com/zmap/zcrypto v0.0.0-20200911161511-43ff0ea04f21 h1:PIpcdSOg3pMdFJUBg5
 github.com/zmap/zcrypto v0.0.0-20200911161511-43ff0ea04f21/go.mod h1:TxpejqcVKQjQaVVmMGfzx5HnmFMdIU+vLtaCyPBfGI4=
 github.com/zmap/zlint/v2 v2.2.1 h1:b2kI/ToXX16h2wjV2c6Da65eT6aTMtkLHKetXuM9EtI=
 github.com/zmap/zlint/v2 v2.2.1/go.mod h1:ixPWsdq8qLxYRpNUTbcKig3R7WgmspsHGLhCCs6rFAM=
-github.com/ztalab/cfssl v0.0.2 h1:Lx1CpDSo2ifJ4vqZcTXIPyRBSGuAQBCNiszuEqGnY6w=
-github.com/ztalab/cfssl v0.0.2/go.mod h1:9DFxjua+z0uIA0kzWwrJL//weYRUb+tiSvQoeRbfZ7Y=
 go.etcd.io/bbolt v1.3.2/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.etcd.io/bbolt v1.3.3/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.etcd.io/bbolt v1.3.5/go.mod h1:G5EMThwa9y8QZGBClrRx5EY+Yw9kAhnjy3bSjsnlVTQ=
