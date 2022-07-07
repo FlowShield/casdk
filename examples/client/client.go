@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/cloudslit/casdk/caclient"
+	"github.com/cloudslit/casdk/examples/util"
 	"github.com/cloudslit/casdk/pkg/logger"
 	"github.com/cloudslit/casdk/pkg/spiffe"
 	"github.com/pkg/errors"
@@ -15,7 +16,7 @@ import (
 )
 
 var (
-	caAddr     = flag.String("ca", "https://192.168.2.80:8681", "CA Server")
+	caAddr     = flag.String("ca", "https://127.0.0.1:8081", "CA Server")
 	ocspAddr   = flag.String("ocsp", "http://192.168.2.80:8682", "Ocsp Server")
 	serverAddr = flag.String("server", "https://127.0.0.1:6066", "")
 	authKey    = "0739a645a7d6601d9d45f6b237c4edeadad904f2fce53625dfdd541ec4fc8134"
@@ -59,7 +60,7 @@ func NewMTLSClient() (*http.Client, error) {
 	c := caclient.NewCAI(
 		caclient.WithCAServer(caclient.RoleDefault, *caAddr),
 		caclient.WithAuthKey(authKey),
-		caclient.WithOcspAddr(*ocspAddr),
+		//caclient.WithOcspAddr(*ocspAddr),
 		caclient.WithLogger(l),
 	)
 	ex, err := c.NewExchanger(&spiffe.IDGIdentity{
@@ -86,9 +87,9 @@ func NewMTLSClient() (*http.Client, error) {
 	//}
 	client := httpClient(tlsCfg)
 	go ex.RotateController().Run()
-	// util.ExtractCertFromExchanger(ex)
+	util.ExtractCertFromExchanger(ex)
 
-	resp, err := client.Get("http://www.google.com")
+	resp, err := client.Get("http://www.baidu.com")
 	if err != nil {
 		panic(err)
 	}

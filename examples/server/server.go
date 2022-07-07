@@ -17,7 +17,7 @@ import (
 )
 
 var (
-	caAddr   = flag.String("ca", "https://192.168.2.80:8681", "CA Server")
+	caAddr   = flag.String("ca", "https://127.0.0.1:8081", "CA Server")
 	ocspAddr = flag.String("ocsp", "http://192.168.2.80:8682", "Ocsp Server")
 	addr     = flag.String("addr", ":6066", "")
 	authKey  = "0739a645a7d6601d9d45f6b237c4edeadad904f2fce53625dfdd541ec4fc8134"
@@ -49,7 +49,7 @@ func NewMTLSServer() error {
 	})
 	c := caclient.NewCAI(
 		caclient.WithCAServer(caclient.RoleDefault, *caAddr),
-		caclient.WithOcspAddr(*ocspAddr),
+		//caclient.WithOcspAddr(*ocspAddr),
 		caclient.WithAuthKey(authKey),
 		caclient.WithLogger(l),
 		caclient.WithCSRConf(keygen.CSRConf{

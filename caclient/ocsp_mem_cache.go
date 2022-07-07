@@ -34,6 +34,9 @@ func NewOcspMemCache(logger *zap.SugaredLogger, ocspAddr string) (OcspClient, er
 
 // Validate ...
 func (of *ocspMemCache) Validate(leaf, issuer *x509.Certificate) (bool, error) {
+	if of.ocspURL == "" {
+		return true, nil
+	}
 	if atomic.LoadInt64(&ocspBlockSign) == 1 {
 		return false, errors.New("ocsp Request disabled")
 	}
