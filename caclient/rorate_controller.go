@@ -9,9 +9,8 @@ import (
 
 // RotateController ...
 type RotateController struct {
-	transport   *Transport
-	rotateAfter time.Duration
-	logger      *zap.SugaredLogger
+	transport *Transport
+	logger    *zap.SugaredLogger
 }
 
 // Run ...

@@ -22,3 +22,7 @@ require (
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 )
+
+replace (
+	github.com/cloudslit/cfssl => /Users/zhangshuai/cfssl
+)

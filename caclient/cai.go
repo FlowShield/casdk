@@ -1,10 +1,8 @@
 package caclient
 
 import (
-	"github.com/cloudslit/casdk/pkg/logger"
-	"time"
-
 	"github.com/cloudslit/casdk/keygen"
+	"github.com/cloudslit/casdk/pkg/logger"
 	"github.com/cloudslit/cfssl/csr"
 	"github.com/cloudslit/cfssl/transport/core"
 	"go.uber.org/zap"
@@ -22,13 +20,12 @@ const (
 
 // Conf ...
 type Conf struct {
-	CFIdentity  *core.Identity
-	DiskStore   bool
-	CaAddr      string
-	OcspAddr    string
-	RotateAfter time.Duration
-	Logger      *zap.Logger
-	CSRConf     keygen.CSRConf
+	CFIdentity *core.Identity
+	DiskStore  bool
+	CaAddr     string
+	OcspAddr   string
+	Logger     *zap.Logger
+	CSRConf    keygen.CSRConf
 }
 
 // OptionFunc ...
@@ -88,12 +85,6 @@ func WithAuthKey(key string) OptionFunc {
 	}
 }
 
-func WithRotateAfter(du time.Duration) OptionFunc {
-	return func(c *Conf) {
-		c.RotateAfter = du
-	}
-}
-
 func WithLogger(l *zap.Logger) OptionFunc {
 	return func(c *Conf) {
 		c.Logger = l
@@ -115,6 +106,5 @@ var defaultConf = Conf{
 			"cfssl": make(map[string]string),
 		},
 	},
-	RotateAfter: 5 * time.Minute,
-	Logger:      logger.N().Named("cai"),
+	Logger: logger.N().Named("cai"),
 }

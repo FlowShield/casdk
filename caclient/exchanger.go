@@ -146,8 +146,7 @@ func (cai *CAInstance) NewTransport(id *spiffe.IDGIdentity, keyPEM []byte, certP
 // RotateController ...
 func (ex *Exchanger) RotateController() *RotateController {
 	return &RotateController{
-		transport:   ex.Transport,
-		rotateAfter: ex.caiConf.RotateAfter,
-		logger:      ex.logger.Named("rotator"),
+		transport: ex.Transport,
+		logger:    ex.logger.Named("rotator"),
 	}
 }

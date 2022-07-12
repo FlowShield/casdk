@@ -17,6 +17,7 @@ import (
 	"encoding/asn1"
 	"encoding/json"
 	"fmt"
+	"time"
 
 	"github.com/pkg/errors"
 )
@@ -24,7 +25,8 @@ import (
 var (
 	// AttrOID is the ASN.1 object identifier for an attribute extension in an
 	// X509 certificate
-	AttrOID = asn1.ObjectIdentifier{1, 2, 3, 4, 5, 6, 7, 8, 1}
+	AttrOID   = asn1.ObjectIdentifier{1, 2, 3, 4, 5, 6, 7, 8, 1}
+	ExpiryOID = asn1.ObjectIdentifier{1, 2, 3, 4, 5, 6, 7, 8, 2}
 	// AttrOIDString is the string version of AttrOID
 	AttrOIDString = "1.2.3.4.5.6.7.8.1"
 )
@@ -226,4 +228,26 @@ func getAttrByName(name string, attrs []Attribute) Attribute {
 		}
 	}
 	return nil
+}
+
+// AppendExpiryToCSR
+func AppendExpiryToCSR(expiry time.Duration, csr *x509.CertificateRequest) {
+	csr.ExtraExtensions = append(csr.ExtraExtensions, pkix.Extension{
+		Id:       ExpiryOID,
+		Value:    []byte(expiry.String()),
+		Critical: false,
+	})
+}
+
+func GetExpiryValue(csr *x509.CertificateRequest) time.Duration {
+	for _, ext := range csr.Extensions {
+		if ext.Id.String() == ExpiryOID.String() {
+			if string(ext.Value) == "" {
+				break
+			}
+			expiry, _ := time.ParseDuration(string(ext.Value))
+			return expiry
+		}
+	}
+	return 0
 }

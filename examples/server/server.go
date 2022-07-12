@@ -4,16 +4,16 @@ import (
 	"crypto/tls"
 	"flag"
 	"fmt"
-	"github.com/cloudslit/casdk/examples/util"
-	"net"
-
 	"github.com/cloudslit/casdk/caclient"
+	"github.com/cloudslit/casdk/examples/util"
 	"github.com/cloudslit/casdk/keygen"
 	"github.com/cloudslit/casdk/pkg/logger"
 	"github.com/cloudslit/casdk/pkg/spiffe"
 	"github.com/pkg/errors"
 	"github.com/valyala/fasthttp"
 	"go.uber.org/zap/zapcore"
+	"net"
+	"time"
 )
 
 var (
@@ -49,12 +49,12 @@ func NewMTLSServer() error {
 	})
 	c := caclient.NewCAI(
 		caclient.WithCAServer(caclient.RoleDefault, *caAddr),
-		//caclient.WithOcspAddr(*ocspAddr),
 		caclient.WithAuthKey(authKey),
 		caclient.WithLogger(l),
 		caclient.WithCSRConf(keygen.CSRConf{
 			SNIHostnames: []string{"supreme"},
 			IPAddresses:  []string{"10.10.10.10"},
+			Expiry:       20 * time.Minute,
 		}),
 	)
 	ex, err := c.NewExchanger(&spiffe.IDGIdentity{

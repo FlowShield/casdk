@@ -9,6 +9,7 @@ import (
 	"crypto/x509/pkix"
 	"encoding/pem"
 	"errors"
+	"github.com/cloudslit/casdk/pkg/attrmgr"
 	"os"
 	"strings"
 	"time"
@@ -37,6 +38,7 @@ const (
 type CSRConf struct {
 	SNIHostnames []string
 	IPAddresses  []string
+	Expiry       time.Duration
 }
 
 type CertOptions struct {
@@ -127,6 +129,9 @@ func GenCSR(key []byte, options CertOptions) ([]byte, error) {
 		IsDualUse:     false,
 	})
 	template.Subject.CommonName = options.CN
+	if options.TTL != 0 {
+		attrmgr.AppendExpiryToCSR(options.TTL, template)
+	}
 	priv, err := helpers.ParsePrivateKeyPEM(key)
 	if err != nil {
 		return nil, err
@@ -178,6 +183,7 @@ func GenExtendWorkloadCSR(key []byte, id *spiffe.IDGIdentity, csrConf CSRConf) (
 		Host: strings.Join(hosts, ","),
 		Org:  id.ClusterID,
 		CN:   id.UniqueID,
+		TTL:  csrConf.Expiry,
 	})
 }
 
