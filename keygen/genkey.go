@@ -217,6 +217,10 @@ func GenCustomExtendCSR(pemKey []byte, id *spiffe.IDGIdentity, opts *CertOptions
 	if len(exts) > 0 {
 		template.ExtraExtensions = append(template.ExtraExtensions, exts...)
 	}
+	// 自定义过期时间
+	if opts.TTL != 0 {
+		attrmgr.AppendExpiryToCSR(opts.TTL, template)
+	}
 	priv, err := helpers.ParsePrivateKeyPEM(pemKey)
 	if err != nil {
 		return nil, err
