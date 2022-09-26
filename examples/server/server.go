@@ -18,7 +18,7 @@ import (
 
 var (
 	caAddr   = flag.String("ca", "https://127.0.0.1:8081", "CA Server")
-	ocspAddr = flag.String("ocsp", "http://192.168.2.80:8682", "Ocsp Server")
+	ocspAddr = flag.String("ocsp", "http://127.0.0.1:8082", "Ocsp Server")
 	addr     = flag.String("addr", ":6066", "")
 	authKey  = "0739a645a7d6601d9d45f6b237c4edeadad904f2fce53625dfdd541ec4fc8134"
 )
@@ -61,6 +61,8 @@ func NewMTLSServer() error {
 		SiteID:    "test_site",
 		ClusterID: "cluster_test",
 		UniqueID:  "server1",
+	}, map[string]interface{}{
+		"unique_id": "yayayyaay",
 	})
 	if err != nil {
 		return errors.Wrap(err, "Exchanger initialization failed")

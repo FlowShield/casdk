@@ -7,8 +7,6 @@ import (
 	"encoding/hex"
 	"net/http"
 
-	"github.com/cloudslit/cfssl/hook"
-
 	"github.com/cloudslit/cfssl/helpers"
 	"github.com/cloudslit/cfssl/info"
 
@@ -69,17 +67,15 @@ func (cai *CAInstance) NewCertManager() (*CertManager, error) {
 }
 
 // SignPEM ...
-func (cm *CertManager) SignPEM(csrPEM []byte, uniqueID string) ([]byte, error) {
+func (cm *CertManager) SignPEM(csrPEM []byte, metaData map[string]interface{}) ([]byte, error) {
 	if csrPEM == nil {
 		return nil, errors.New("empty input")
 	}
 
 	signReq := signer.SignRequest{
-		Request: string(csrPEM),
-		Profile: cm.profile,
-		Metadata: map[string]interface{}{
-			hook.MetadataUniqueID: uniqueID,
-		},
+		Request:  string(csrPEM),
+		Profile:  cm.profile,
+		Metadata: metaData,
 	}
 
 	csr, err := helpers.ParseCSRPEM(csrPEM)

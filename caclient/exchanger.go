@@ -57,10 +57,14 @@ func (cai *CAInstance) NewExchangerWithKeypair(id *spiffe.IDGIdentity, keyPEM []
 }
 
 // NewExchanger ...
-func (cai *CAInstance) NewExchanger(id *spiffe.IDGIdentity) (*Exchanger, error) {
+func (cai *CAInstance) NewExchanger(id *spiffe.IDGIdentity, metaData ...map[string]interface{}) (*Exchanger, error) {
 	tr, err := cai.NewTransport(id, nil, nil)
 	if err != nil {
 		return nil, err
+	}
+	if len(metaData) > 0 {
+		// 元数据
+		tr.MetaData = metaData[0]
 	}
 	of, err := NewOcspMemCache(cai.Logger.Sugar().Named("ocsp"), cai.Conf.OcspAddr)
 	if err != nil {

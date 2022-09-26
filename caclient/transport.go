@@ -52,6 +52,8 @@ type Transport struct {
 	manualRevoke bool
 
 	logger *zap.SugaredLogger
+
+	MetaData map[string]interface{}
 }
 
 // TLSClientAuthClientConfig Client TLS configuration, changing certificate dynamically
@@ -159,7 +161,7 @@ func (tr *Transport) RefreshKeys() (err error) {
 	select {
 	case err := <-ch:
 		return err
-	case <-time.After(5 * time.Second): // 5 seconds timeout
+	case <-time.After(30 * time.Second): // 5 seconds timeout
 		return errors.New("RefreshKeys timeout")
 	}
 
@@ -204,7 +206,7 @@ func (tr *Transport) AsyncRefreshKeys() error {
 		tr.logger.Debug("Create CSR complete")
 
 		tr.logger.Debug("requesting certificate from CA")
-		cert, err := tr.CA.SignCSR(req)
+		cert, err := tr.CA.SignCSR(req, tr.MetaData)
 		if err != nil {
 			if tr.Provider.SignalFailure(err) {
 				return tr.RefreshKeys()
