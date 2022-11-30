@@ -1,10 +1,10 @@
-module github.com/cloudslit/casdk
+module github.com/flowshield/casdk
 
 go 1.17
 
 require (
 	github.com/cloudflare/backoff v0.0.0-20161212185259-647f3cdfc87a
-	github.com/cloudslit/cfssl v0.0.1
+	github.com/flowshield/cfssl v0.0.1
 	github.com/pkg/errors v0.9.1
 	github.com/spiffe/go-spiffe/v2 v2.0.0-beta.4
 	github.com/valyala/fasthttp v1.15.1
@@ -15,7 +15,7 @@ require (
 
 // todo
 replace (
-	github.com/cloudslit/cfssl v0.0.1 => /Users/zhangshuai/cloudslit/cfssl
+	github.com/flowshield/cfssl v0.0.1 => /Users/zhangshuai/flowshield/cfssl
 )
 
 require (

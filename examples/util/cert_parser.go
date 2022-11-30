@@ -4,9 +4,9 @@ import (
 	"crypto/x509"
 	"encoding/pem"
 	"fmt"
-	"github.com/cloudslit/casdk/caclient"
-	"github.com/cloudslit/casdk/pkg/logger"
-	"github.com/cloudslit/cfssl/helpers"
+	"github.com/flowshield/casdk/caclient"
+	"github.com/flowshield/casdk/pkg/logger"
+	"github.com/flowshield/cfssl/helpers"
 )
 
 func ExtractCertFromExchanger(ex *caclient.Exchanger) {

@@ -9,17 +9,17 @@ import (
 	"crypto/x509/pkix"
 	"encoding/pem"
 	"errors"
-	"github.com/cloudslit/casdk/pkg/attrmgr"
+	"github.com/flowshield/casdk/pkg/attrmgr"
 	"os"
 	"strings"
 	"time"
 
-	cf_csr "github.com/cloudslit/cfssl/csr"
-	"github.com/cloudslit/cfssl/helpers"
+	cf_csr "github.com/flowshield/cfssl/csr"
+	"github.com/flowshield/cfssl/helpers"
 
-	"github.com/cloudslit/casdk/pkg/pkiutil"
-	"github.com/cloudslit/casdk/pkg/spiffe"
-	"github.com/cloudslit/casdk/pkg/util"
+	"github.com/flowshield/casdk/pkg/pkiutil"
+	"github.com/flowshield/casdk/pkg/spiffe"
+	"github.com/flowshield/casdk/pkg/util"
 )
 
 type SupportedSignatureAlgorithms string

@@ -12,7 +12,7 @@ import (
 	"golang.org/x/crypto/ocsp"
 	"golang.org/x/sync/singleflight"
 
-	"github.com/cloudslit/casdk/pkg/logger"
+	"github.com/flowshield/casdk/pkg/logger"
 	"github.com/pkg/errors"
 )
 

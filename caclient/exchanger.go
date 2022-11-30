@@ -2,11 +2,11 @@ package caclient
 
 import (
 	"github.com/cloudflare/backoff"
-	"github.com/cloudslit/casdk/keyprovider"
-	"github.com/cloudslit/casdk/pkg/spiffe"
-	"github.com/cloudslit/cfssl/hook"
-	"github.com/cloudslit/cfssl/transport"
-	"github.com/cloudslit/cfssl/transport/roots"
+	"github.com/flowshield/casdk/keyprovider"
+	"github.com/flowshield/casdk/pkg/spiffe"
+	"github.com/flowshield/cfssl/hook"
+	"github.com/flowshield/cfssl/transport"
+	"github.com/flowshield/cfssl/transport/roots"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 	"net/url"

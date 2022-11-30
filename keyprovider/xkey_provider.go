@@ -12,13 +12,13 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/cloudslit/casdk/pkg/logger"
-	"github.com/cloudslit/cfssl/csr"
-	"github.com/cloudslit/cfssl/helpers"
+	"github.com/flowshield/casdk/pkg/logger"
+	"github.com/flowshield/cfssl/csr"
+	"github.com/flowshield/cfssl/helpers"
 	"github.com/pkg/errors"
 
-	"github.com/cloudslit/casdk/keygen"
-	"github.com/cloudslit/casdk/pkg/spiffe"
+	"github.com/flowshield/casdk/keygen"
+	"github.com/flowshield/casdk/pkg/spiffe"
 )
 
 const (
