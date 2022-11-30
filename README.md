@@ -8,10 +8,10 @@
 ### SDK Installation
 
 ```
-$ go get github.com/cloudslit/casdk
+$ go get github.com/flowshield/casdk
 ```
 
 The classic usage of the ZACA SDK is that the client and the server use the certificate issued by the CA center for encrypted communication. The following is the usage of the sdk between the client and the server.
 
-See：[Demo](https://github.com/cloudslit/casdk/tree/master/examples)
+See：[Demo](https://github.com/flowshield/casdk/tree/master/examples)
 

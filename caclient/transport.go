@@ -8,11 +8,11 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/cloudflare/backoff"
-	"github.com/cloudslit/cfssl/csr"
-	"github.com/cloudslit/cfssl/transport/ca"
-	"github.com/cloudslit/cfssl/transport/core"
-	"github.com/cloudslit/cfssl/transport/kp"
-	"github.com/cloudslit/cfssl/transport/roots"
+	"github.com/flowshield/cfssl/csr"
+	"github.com/flowshield/cfssl/transport/ca"
+	"github.com/flowshield/cfssl/transport/core"
+	"github.com/flowshield/cfssl/transport/kp"
+	"github.com/flowshield/cfssl/transport/roots"
 )
 
 // A Transport is capable of providing transport-layer security using

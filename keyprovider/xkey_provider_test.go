@@ -2,8 +2,8 @@ package keyprovider
 
 import (
 	"fmt"
-	"github.com/cloudslit/casdk/keygen"
-	"github.com/cloudslit/casdk/pkg/spiffe"
+	"github.com/flowshield/casdk/keygen"
+	"github.com/flowshield/casdk/pkg/spiffe"
 	"testing"
 )
 

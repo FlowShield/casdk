@@ -7,13 +7,13 @@ import (
 	"encoding/hex"
 	"net/http"
 
-	"github.com/cloudslit/cfssl/helpers"
-	"github.com/cloudslit/cfssl/info"
+	"github.com/flowshield/cfssl/helpers"
+	"github.com/flowshield/cfssl/info"
 
 	jsoniter "encoding/json"
-	"github.com/cloudslit/cfssl/api/client"
-	"github.com/cloudslit/cfssl/auth"
-	"github.com/cloudslit/cfssl/signer"
+	"github.com/flowshield/cfssl/api/client"
+	"github.com/flowshield/cfssl/auth"
+	"github.com/flowshield/cfssl/signer"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

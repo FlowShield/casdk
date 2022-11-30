@@ -6,9 +6,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/cloudslit/casdk/pkg/logger"
-	"github.com/cloudslit/casdk/pkg/spiffe"
-	"github.com/cloudslit/cfssl/transport/core"
+	"github.com/flowshield/casdk/pkg/logger"
+	"github.com/flowshield/casdk/pkg/spiffe"
+	"github.com/flowshield/cfssl/transport/core"
 )
 
 // TLSGenerator ...

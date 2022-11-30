@@ -5,13 +5,13 @@ import (
 	"encoding/asn1"
 	"flag"
 	"fmt"
-	"github.com/cloudslit/casdk/caclient"
-	"github.com/cloudslit/cfssl/hook"
+	"github.com/flowshield/casdk/caclient"
+	"github.com/flowshield/cfssl/hook"
 	"os"
 
-	"github.com/cloudslit/casdk/keygen"
-	"github.com/cloudslit/casdk/pkg/logger"
-	"github.com/cloudslit/casdk/pkg/spiffe"
+	"github.com/flowshield/casdk/keygen"
+	"github.com/flowshield/casdk/pkg/logger"
+	"github.com/flowshield/casdk/pkg/spiffe"
 	"go.uber.org/zap/zapcore"
 )
 
