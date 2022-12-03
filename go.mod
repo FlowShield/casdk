@@ -13,9 +13,6 @@ require (
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
 )
 
-// todo
-replace github.com/flowshield/cfssl v0.0.1 => /Users/zhangshuai/flowshield/cfssl
-
 require (
 	bitbucket.org/creachadair/shell v0.0.6 // indirect
 	cloud.google.com/go v0.84.0 // indirect
