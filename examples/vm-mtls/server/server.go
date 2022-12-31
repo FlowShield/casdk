@@ -46,7 +46,7 @@ func main() {
 	}
 }
 
-// NewIDGRegistry 注册中心测试示例
+// NewIDGRegistry
 func NewIDGRegistry() error {
 	cai := caclient.NewCAI(
 		caclient.WithCAServer(caclient.RoleDefault, *caAddr),
