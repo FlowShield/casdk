@@ -1,8 +1,9 @@
 package spiffe
 
 import (
-	"github.com/spiffe/go-spiffe/v2/spiffeid"
 	"strings"
+
+	"github.com/spiffe/go-spiffe/v2/spiffeid"
 )
 
 // IDG Identity
@@ -31,7 +32,7 @@ func ParseIDGIdentity(s string) (*IDGIdentity, error) {
 }
 
 func (i IDGIdentity) SpiffeID() spiffeid.ID {
-	id, _ := spiffeid.New(i.SiteID, i.ClusterID, i.UniqueID)
+	id, _ := spiffeid.FromSegments(spiffeid.RequireTrustDomainFromString(i.SiteID), i.ClusterID, i.UniqueID)
 	return id
 }
 
